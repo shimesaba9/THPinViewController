@@ -7,6 +7,7 @@
 //
 
 #import "THPinViewController.h"
+#import "THPinViewControllerResources.h"
 #import "THPinView.h"
 #import "UIImage+ImageEffects.h"
 
@@ -27,8 +28,7 @@
         _delegate = delegate;
         _backgroundColor = [UIColor whiteColor];
         _translucentBackground = NO;
-        NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"THPinViewController"
-                                                                                    ofType:@"bundle"]];
+        NSBundle *bundle = THPinViewControllerResourcesBundle();
         _promptTitle = NSLocalizedStringFromTableInBundle(@"prompt_title", @"THPinViewController", bundle, nil);
     }
     return self;

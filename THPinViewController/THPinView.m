@@ -7,6 +7,7 @@
 //
 
 #import "THPinView.h"
+#import "THPinViewControllerResources.h"
 #import "THPinInputCirclesView.h"
 #import "THPinNumPadView.h"
 #import "THPinNumButton.h"
@@ -200,8 +201,7 @@
 
 - (void)updateBottomButton
 {
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"THPinViewController"
-                                                                                ofType:@"bundle"]];
+    NSBundle *bundle = THPinViewControllerResourcesBundle();
     if (self.input.length == 0) {
         self.bottomButton.hidden = self.disableCancel;
         [self.bottomButton setTitle:NSLocalizedStringFromTableInBundle(@"cancel_button_title", @"THPinViewController",
